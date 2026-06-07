@@ -1,0 +1,72 @@
+project_root: D:/ChiVan/Dataset/HE-FedSec
+profile: quick
+seed: 42
+datasets_raw:
+  edgeiiot_ml: D:/ChiVan/Dataset/ML-EdgeIIoT-dataset.csv
+  keystroke: D:/ChiVan/Dataset/DSL-StrongPasswordData.csv
+  rba: D:/ChiVan/Dataset/rba-dataset.csv
+paths:
+  processed: D:/ChiVan/Dataset/HE-FedSec/data_processed
+  results_raw: D:/ChiVan/Dataset/HE-FedSec/results/raw
+  excel: D:/ChiVan/Dataset/HE-FedSec/results/excel
+  figures: D:/ChiVan/Dataset/HE-FedSec/results/figures
+he_backend: tenseal
+he:
+  poly_modulus_degree: 8192
+  coeff_mod_bit_sizes:
+  - 60
+  - 40
+  - 40
+  - 60
+  scale_bits: 40
+fl:
+  rounds: 15
+  local_epochs: 5
+  lr: 0.01
+  batch_size: 128
+  n_clients: 4
+  partition:
+    edgeiiot: dirichlet
+    keystroke: natural
+    rba: dirichlet
+  dirichlet_alpha: 0.5
+methods:
+- centralized
+- local
+- fedavg
+- he_fedavg
+- fedavg_dp
+dp:
+  clip: 4.0
+  sigma: 0.02
+model:
+  edgeiiot:
+    hidden:
+    - 128
+    - 64
+    dropout: 0.1
+  keystroke:
+    hidden:
+    - 128
+    - 64
+    dropout: 0.1
+  rba:
+    hidden:
+    - 64
+    - 32
+    dropout: 0.1
+data:
+  test_size: 0.2
+  edgeiiot:
+    sample_cap: 80000
+  keystroke: {}
+  rba:
+    target: is_attack_ip
+    scan_rows: 1200000
+    chunksize: 200000
+    pos_cap: 40000
+    neg_cap: 120000
+datasets_order:
+- edgeiiot
+- keystroke
+- rba

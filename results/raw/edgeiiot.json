@@ -1,0 +1,330 @@
+{
+  "dataset": "edgeiiot",
+  "task": "multiclass",
+  "n_classes": 15,
+  "in_dim": 34,
+  "partition": "dirichlet",
+  "client_sizes": [
+    19381,
+    13503,
+    18864,
+    12251
+  ],
+  "class_counts": {
+    "Backdoor": 5169,
+    "DDoS_HTTP": 5354,
+    "DDoS_ICMP": 7143,
+    "DDoS_TCP": 5195,
+    "DDoS_UDP": 7350,
+    "Fingerprinting": 507,
+    "MITM": 615,
+    "Normal": 12320,
+    "Password": 5064,
+    "Port_Scanning": 5106,
+    "Ransomware": 5539,
+    "SQL_injection": 5227,
+    "Uploading": 5206,
+    "Vulnerability_scanner": 5108,
+    "XSS": 5096
+  },
+  "methods": {
+    "centralized": {
+      "accuracy": 0.7726875,
+      "macro_f1": 0.7130604815432768,
+      "weighted_f1": 0.759124607700552,
+      "method": "centralized",
+      "wall_time_s": 24.118870800361037,
+      "n_params": 13711
+    },
+    "local": {
+      "accuracy": 0.67434375,
+      "macro_f1": 0.5897929969008855,
+      "weighted_f1": 0.6413311238598591,
+      "method": "local",
+      "wall_time_s": 21.37735310010612,
+      "n_params": 13711
+    },
+    "fedavg": {
+      "accuracy": 0.7350625,
+      "macro_f1": 0.6758129963414992,
+      "weighted_f1": 0.7131832926053666,
+      "method": "fedavg",
+      "wall_time_s": 21.927895599976182,
+      "n_params": 13711,
+      "history": [
+        {
+          "accuracy": 0.4425,
+          "macro_f1": 0.3023575026426567,
+          "weighted_f1": 0.35272257698175635
+        },
+        {
+          "accuracy": 0.5535625,
+          "macro_f1": 0.44005277046348923,
+          "weighted_f1": 0.49441264545138586
+        },
+        {
+          "accuracy": 0.6544375,
+          "macro_f1": 0.5773217538648766,
+          "weighted_f1": 0.6209302926939833
+        },
+        {
+          "accuracy": 0.6523125,
+          "macro_f1": 0.5826198245274092,
+          "weighted_f1": 0.6310393764855572
+        },
+        {
+          "accuracy": 0.683,
+          "macro_f1": 0.6096559436123453,
+          "weighted_f1": 0.664072601613877
+        },
+        {
+          "accuracy": 0.7095625,
+          "macro_f1": 0.6216652006223065,
+          "weighted_f1": 0.6770916431751095
+        },
+        {
+          "accuracy": 0.71025,
+          "macro_f1": 0.6265879577275295,
+          "weighted_f1": 0.6850944698314226
+        },
+        {
+          "accuracy": 0.7350625,
+          "macro_f1": 0.6546318888687069,
+          "weighted_f1": 0.7119940858229767
+        },
+        {
+          "accuracy": 0.7224375,
+          "macro_f1": 0.6542646895447061,
+          "weighted_f1": 0.7099502171760623
+        },
+        {
+          "accuracy": 0.72625,
+          "macro_f1": 0.6466856780026714,
+          "weighted_f1": 0.6993134801554087
+        },
+        {
+          "accuracy": 0.7258125,
+          "macro_f1": 0.6464178115195869,
+          "weighted_f1": 0.7009827280612257
+        },
+        {
+          "accuracy": 0.7408125,
+          "macro_f1": 0.656991983987525,
+          "weighted_f1": 0.7138198520795371
+        },
+        {
+          "accuracy": 0.732625,
+          "macro_f1": 0.6645272465517152,
+          "weighted_f1": 0.7058374587270401
+        },
+        {
+          "accuracy": 0.728,
+          "macro_f1": 0.6689003372443126,
+          "weighted_f1": 0.7008498566650652
+        },
+        {
+          "accuracy": 0.7350625,
+          "macro_f1": 0.6758129963414992,
+          "weighted_f1": 0.7131832926053666
+        }
+      ],
+      "rounds": 15,
+      "n_clients": 4,
+      "comm_upload_MB": 3.29064
+    },
+    "he_fedavg": {
+      "accuracy": 0.7325,
+      "macro_f1": 0.6485643326079009,
+      "weighted_f1": 0.704789272632997,
+      "method": "he_fedavg",
+      "wall_time_s": 24.324181099422276,
+      "n_params": 13711,
+      "history": [
+        {
+          "accuracy": 0.4361875,
+          "macro_f1": 0.29611308355153637,
+          "weighted_f1": 0.3472968448980785
+        },
+        {
+          "accuracy": 0.558375,
+          "macro_f1": 0.45173262909205475,
+          "weighted_f1": 0.507743084081839
+        },
+        {
+          "accuracy": 0.6145625,
+          "macro_f1": 0.5393358598904595,
+          "weighted_f1": 0.5796376079367104
+        },
+        {
+          "accuracy": 0.6705625,
+          "macro_f1": 0.5966525276820751,
+          "weighted_f1": 0.6498939812550757
+        },
+        {
+          "accuracy": 0.683375,
+          "macro_f1": 0.6072080952982457,
+          "weighted_f1": 0.6637282046789579
+        },
+        {
+          "accuracy": 0.7053125,
+          "macro_f1": 0.6303405119532904,
+          "weighted_f1": 0.6857396580368452
+        },
+        {
+          "accuracy": 0.6901875,
+          "macro_f1": 0.6186277612665858,
+          "weighted_f1": 0.6746086481107906
+        },
+        {
+          "accuracy": 0.712125,
+          "macro_f1": 0.6593242289112918,
+          "weighted_f1": 0.6989499006543292
+        },
+        {
+          "accuracy": 0.7226875,
+          "macro_f1": 0.6517526907404197,
+          "weighted_f1": 0.7045459592250501
+        },
+        {
+          "accuracy": 0.71675,
+          "macro_f1": 0.6503731049804298,
+          "weighted_f1": 0.7030272185782196
+        },
+        {
+          "accuracy": 0.731625,
+          "macro_f1": 0.6568817971618945,
+          "weighted_f1": 0.712451284526244
+        },
+        {
+          "accuracy": 0.72675,
+          "macro_f1": 0.6584145506399981,
+          "weighted_f1": 0.7138936524903075
+        },
+        {
+          "accuracy": 0.7381875,
+          "macro_f1": 0.6824589922239169,
+          "weighted_f1": 0.7216513610752191
+        },
+        {
+          "accuracy": 0.737875,
+          "macro_f1": 0.6658316797198119,
+          "weighted_f1": 0.7155490868707008
+        },
+        {
+          "accuracy": 0.7325,
+          "macro_f1": 0.6485643326079009,
+          "weighted_f1": 0.704789272632997
+        }
+      ],
+      "rounds": 15,
+      "n_clients": 4,
+      "he": {
+        "he_backend": "tenseal",
+        "poly_modulus_degree": 8192,
+        "coeff_mod_bit_sizes": [
+          60,
+          40,
+          40,
+          60
+        ],
+        "scale_bits": 40,
+        "slots": 4096,
+        "enc_ms_per_client_round": 22.988624963909388,
+        "agg_ms_per_round": 15.69497330735127,
+        "dec_ms_per_round": 5.229473238190015,
+        "cipher_bytes_per_client": 1337806,
+        "plain_bytes_per_client": 54844,
+        "expansion_x": 24.392932681788345
+      },
+      "comm_upload_MB": 80.26836
+    },
+    "fedavg_dp": {
+      "accuracy": 0.6756875,
+      "macro_f1": 0.5973421127266205,
+      "weighted_f1": 0.6492440507240347,
+      "method": "fedavg_dp",
+      "wall_time_s": 21.714087700471282,
+      "n_params": 13711,
+      "history": [
+        {
+          "accuracy": 0.4210625,
+          "macro_f1": 0.31407525641878614,
+          "weighted_f1": 0.37316651395033396
+        },
+        {
+          "accuracy": 0.4681875,
+          "macro_f1": 0.3492002391614501,
+          "weighted_f1": 0.3985910259391133
+        },
+        {
+          "accuracy": 0.4975625,
+          "macro_f1": 0.36570951837241766,
+          "weighted_f1": 0.4224369931061742
+        },
+        {
+          "accuracy": 0.513,
+          "macro_f1": 0.38878973091026126,
+          "weighted_f1": 0.45388612286373287
+        },
+        {
+          "accuracy": 0.51825,
+          "macro_f1": 0.4054148553913754,
+          "weighted_f1": 0.46490982113515333
+        },
+        {
+          "accuracy": 0.5495625,
+          "macro_f1": 0.4437109595959357,
+          "weighted_f1": 0.49862112480147
+        },
+        {
+          "accuracy": 0.5534375,
+          "macro_f1": 0.4413871012532627,
+          "weighted_f1": 0.49837118634838645
+        },
+        {
+          "accuracy": 0.589,
+          "macro_f1": 0.4820174141695138,
+          "weighted_f1": 0.5443888481657972
+        },
+        {
+          "accuracy": 0.6204375,
+          "macro_f1": 0.5378642675093986,
+          "weighted_f1": 0.5829788733238999
+        },
+        {
+          "accuracy": 0.63275,
+          "macro_f1": 0.5526722991147086,
+          "weighted_f1": 0.5956614466014449
+        },
+        {
+          "accuracy": 0.64425,
+          "macro_f1": 0.5707181770023494,
+          "weighted_f1": 0.6190289882529345
+        },
+        {
+          "accuracy": 0.67925,
+          "macro_f1": 0.6002203161182033,
+          "weighted_f1": 0.6454493028037949
+        },
+        {
+          "accuracy": 0.70275,
+          "macro_f1": 0.6187975515210425,
+          "weighted_f1": 0.6679423009969765
+        },
+        {
+          "accuracy": 0.700625,
+          "macro_f1": 0.6177113595942444,
+          "weighted_f1": 0.6682726235138742
+        },
+        {
+          "accuracy": 0.6756875,
+          "macro_f1": 0.5973421127266205,
+          "weighted_f1": 0.6492440507240347
+        }
+      ],
+      "rounds": 15,
+      "n_clients": 4,
+      "comm_upload_MB": 3.29064
+    }
+  }
+}
